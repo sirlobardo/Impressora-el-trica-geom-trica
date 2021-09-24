@@ -5,13 +5,14 @@ import numpy as np
 
 class Impressora:
 
-    def __init__(self, campo, vel_linear, vel_angular, tempo_0):
+    def __init__(self, campo, vel_linear, vel_angular, n_ele, comp_barra):
        self.e = float(1.6*math.pow(10, -19))
        self.m = float(9*math.pow(10, -31))
        self.c = float(campo)
        self.v = float(vel_linear)
        self.w = float(vel_angular)
-       self.t = float(tempo_0)
+       self.el = int(n_ele)
+       self.com = float(comp_barra)
     pass
 
     def Raio(self, tempo):
@@ -23,3 +24,5 @@ class Impressora:
     def eixoY(self, tempo):
         return self.Raio(tempo)*math.cos(self.w*tempo)
 
+    def interT(self):
+        return np.linspace(0, self.el*self.com/self.v, self.el)
