@@ -1,5 +1,5 @@
 
 from Matricks import *
 
-x = Printer(10, 10, 10, 0).Raio(1)
+x = Impressora(20,3 ,1 ,12, 0.8).Raio(1)
 print(x)
