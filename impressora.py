@@ -30,23 +30,14 @@ class Impressora:
         tf = self.el * te
         t = np.linspace(te, tf, self.el)
         return t
-    '''
-    def Plot(self):
+    def Graph(self, eixoX, eixoY, tempo):
+        plt.title("Impressora de Elétrons")
+        plt.xlabel("Eixo X")
+        plt.ylabel("Eixo Y")
         y = np.empty(self.el)
         x = np.empty(self.el)
-    # HERE YOU PUT THE FORMULA#
-    #x[i] is the x of the math function#
-            y[i] = 50*x[i]
-        return plt.plot(x,y)
+        plt.plot(x,y)
+        return plt.show()
+        
 
-    def Config(self):
-        plt.title(self.title)
-        plt.xlabel(self.xlabel)
-        plt.ylabel(self.ylabel)
-
-    def Show(self):
-        Graph(self.min, self.max, self.title, self.xlabel, self.ylabel).Plot()
-        Graph(self.min, self.max,  self.title, self.xlabel, self.ylabel).Config()
-        plt.show()
-       '''
 
