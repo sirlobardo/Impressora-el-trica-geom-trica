@@ -24,11 +24,29 @@ class Impressora:
         return self.Raio(tempo)*math.cos(self.w*tempo)
 
     def interT(self):
-        #te = self.com / self.v
-        #for i in range(0, self.el+1, 1):
-            #t = te*i
         te = self.com / self.v
         tf = self.el * te
         t = np.linspace(te, tf, self.el)
-        return t 
+        return t
+'''
+    def Plot(self):
+        dif = self.max - self.min
+        y = np.zeros(dif*100)
+        x = np.linspace(self.min, self.max , dif*100)
+        for i in range(0, dif*100):
+    # HERE YOU PUT THE FORMULA#
+    #x[i] is the x of the math function#
+            y[i] = 50*x[i]
+        return plt.plot(x,y)
+
+    def Config(self):
+        plt.title(self.title)
+        plt.xlabel(self.xlabel)
+        plt.ylabel(self.ylabel)
+
+    def Show(self):
+        Graph(self.min, self.max, self.title, self.xlabel, self.ylabel).Plot()
+        Graph(self.min, self.max,  self.title, self.xlabel, self.ylabel).Config()
+        plt.show()
+'''       
 
