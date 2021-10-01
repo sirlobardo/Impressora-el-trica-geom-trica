@@ -24,4 +24,11 @@ class Impressora:
         return self.Raio(tempo)*math.cos(self.w*tempo)
 
     def interT(self):
-        return np.linspace(0, self.el*self.com/self.v, self.el)
+        #te = self.com / self.v
+        #for i in range(0, self.el+1, 1):
+            #t = te*i
+        te = self.com / self.v
+        tf = self.el * te
+        t = np.linspace(te, tf, self.el)
+        return t 
+
