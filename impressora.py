@@ -17,23 +17,23 @@ class Impressora:
     def Raio(self, tempo):
         return (self.e*self.c*math.pow(tempo, 2)) / (2*self.m)
 
-    def eixoX(self, tempo):
-        return self.Raio(tempo)*math.sin(self.w*tempo)
+    def eixoX(self, tempo, theta):
+        return self.Raio(tempo)*math.sin(theta)
 
-    def eixoY(self, tempo):
-        return self.Raio(tempo)*math.cos(self.w*tempo)
-
+    def eixoY(self, tempo, theta):
+        return self.Raio(tempo)*math.cos(theta)
+    def Theta(self):
+        thetai = 2 * math.pi / self.el
+        return np.linspace(thetai, 2*math.pi, self.el)
     def interT(self):
         te = self.com / self.v
         tf = self.el * te
         t = np.linspace(te, tf, self.el)
         return t
-'''
+    '''
     def Plot(self):
-        dif = self.max - self.min
-        y = np.zeros(dif*100)
-        x = np.linspace(self.min, self.max , dif*100)
-        for i in range(0, dif*100):
+        y = np.empty(self.el)
+        x = np.empty(self.el)
     # HERE YOU PUT THE FORMULA#
     #x[i] is the x of the math function#
             y[i] = 50*x[i]
@@ -48,5 +48,5 @@ class Impressora:
         Graph(self.min, self.max, self.title, self.xlabel, self.ylabel).Plot()
         Graph(self.min, self.max,  self.title, self.xlabel, self.ylabel).Config()
         plt.show()
-'''       
+       '''
 
