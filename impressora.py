@@ -22,20 +22,29 @@ class Impressora:
 
     def eixoY(self, tempo, theta):
         return self.Raio(tempo)*math.cos(theta)
+
     def Theta(self):
         thetai = 2 * math.pi / self.el
         return np.linspace(thetai, 2*math.pi, self.el)
+
     def interT(self):
         te = self.com / self.v
         tf = self.el * te
-        t = np.linspace(te, tf, self.el)
-        return t
-    def Graph(self, eixoX, eixoY, tempo):
+        return np.linspace(te, tf, self.el)
+
+    def Graph(self):
         plt.title("Impressora de Elétrons")
         plt.xlabel("Eixo X")
         plt.ylabel("Eixo Y")
+
         y = np.empty(self.el)
         x = np.empty(self.el)
+        theta = self.Theta()
+        tempo = self.interT()
+
+        for i in range(0, self.el):
+            x[i] = self.eixoX(tempo[i], theta[i])
+            y[i] = self.eixoY(tempo[i], theta[i])
         plt.plot(x,y)
         return plt.show()
         
