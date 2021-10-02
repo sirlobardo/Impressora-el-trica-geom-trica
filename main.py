@@ -1,5 +1,9 @@
-
 from impressora import *
 
-Impressora(20, 3 ,1 ,100, 0.8).Graph()
+campo = input("Campo: ")
+vel = input("Velocidade Linear: ")
+e = input("Número de Elétrons: ")
+c = input("Comprimento : ")
+Impressora(campo, vel, e, c ).Graph()
+input("Pressione qualquer tecla para continuar ...")
 
