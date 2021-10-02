@@ -4,12 +4,11 @@ import numpy as np
 
 class Impressora:
 
-    def __init__(self, campo, vel_linear, vel_angular, n_ele, comp_barra):
+    def __init__(self, campo, vel_linear, n_ele, comp_barra):
        self.e = float(1.6*math.pow(10, -19))
        self.m = float(9*math.pow(10, -31))
        self.c = float(campo)
        self.v = float(vel_linear)
-       self.w = float(vel_angular)
        self.el = int(n_ele)
        self.com = float(comp_barra)
     pass
