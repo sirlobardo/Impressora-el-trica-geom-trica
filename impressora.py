@@ -40,13 +40,12 @@ class Impressora:
         y = np.empty(self.el)
         x = np.empty(self.el)
         theta = self.Theta()
-        tempo = self.interT()
+        tempo = (self.com / self.v) * np.ones(self.el)
 
         for i in range(0, self.el):
             x[i] = self.eixoX(tempo[i], theta[i])
             y[i] = self.eixoY(tempo[i], theta[i])
-        plt.plot(x,y)
-        return plt.show()
+        plt.scatter(x,y)
         
-
-
+        #plt.plot(x,y)
+        return plt.show()
