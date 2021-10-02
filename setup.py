@@ -5,17 +5,17 @@ base = None
 if sys.platform == "win32":
   base = "Win32GUI"
 
-executables = [Executable("preencher_certificados.py", base=base, icon="icon.ico")]
+executables = [Executable("main.py", base=base, icon="icon.ico")]
 
 buildOptions = dict( packages = [],
-                     includes = ["PIL", "PySimpleGUI", "textwrap", "pandas", "io", "os"],
-                     include_files = ["wallpaper_ieee.png", "icon.ico"],
+                     includes = ["matplotlib.pyplot", "math", "numpy"],
+                     include_files = ["impressora.py", "icon.ico"],
                      excludes = []
                    )
 
-setup(name="Gerador de Certificados",
-      version = "0.2",
-      description = "Gerador automático de certificados",
+setup(name="Impressora de Elétrons",
+      version = "0.1",
+      description = "Simulador de Impressora de Elétrons",
       options = dict(build_exe = buildOptions),
       executables = executables
      )
