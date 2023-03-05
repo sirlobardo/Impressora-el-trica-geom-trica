@@ -1,2 +1,2 @@
 # Impressora-Elétrica-Geométrica
-Simulador de empressora elétrica geométrica
+Simulador de impressora elétrica geométrica
